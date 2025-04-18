@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "backend pro series",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +13,8 @@
     "javascript"
   ],
   "author": "satish",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
