@@ -1,8 +1,27 @@
-import mongoose from "mongoose";
-import { DB_NAME } from "./constants";
+// require('dotenv').config({ path: "./env"})
+
+import dotenv from "dotenv";
+
+// import mongoose from "mongoose";
+// import { DB_NAME } from "./constants";
+import connectDB from "./db/db.js";
+
+// -r dotenv/config --experimental-json-modules
+// we need to add this in package.json/ nodemon 
+
+
+dotenv.config({
+  path: "./env"
+}
+)
+
+connectDB();
+
+
+
 
 // function connectDB() {}
-// connectDB();
+// connectDB();      //calling the function immediately
 
 // or
 
