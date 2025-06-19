@@ -42,7 +42,7 @@ const app = express();
       throw error;
     });
     app.listen(process.env.PORT, () => {
-      console.log(`App is listening on the Port ${process.env.PORT}`);
+      console.log(`App is listening on the Port ${process.env.PORT || 5000}`);
     });
   } catch (error) {
     console.error("Error :", error);
