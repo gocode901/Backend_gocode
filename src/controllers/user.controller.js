@@ -1,9 +1,11 @@
 import asyncHandler from "../utils/asyncHandler.js"
 
 const registerUser= asyncHandler(async (req, res)=>{
-    res.status(200).json({
-        message: "ok"
-    })
+   try {
+    res.status(200).json({ message: "User registered" });
+  } catch (error) {
+    next(error);
+  }
 })
 
-export {registerUser} 
+export default registerUser
