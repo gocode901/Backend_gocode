@@ -1,12 +1,12 @@
-
 // by promises wrapper for execution function
 
-const asynHandler=( requestHandler)=>{
-   return  (req, res, next)=>{
+const asyncHandler=( requestHandler)=>{
+   return (req, res, next)=>{
         Promise.resolve( requestHandler(req,res,next)).catch((err)=>next(err))
     }
 };
 
+export default asyncHandler
 
 
 //   by try and catch   wrapper for execution function
@@ -22,7 +22,6 @@ const asynHandler=( requestHandler)=>{
 //     }
 // }
 
-export default asynHandler
 
 
 // const asynHandler=()=>{}
