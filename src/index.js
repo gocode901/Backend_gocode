@@ -7,7 +7,7 @@ import {app} from "./app.js"
 // we need to add this in package.json/ nodemon 
 
 dotenv.config({
-  path: "./env"
+  path: "./.env"
 })
 
 connectDB()
