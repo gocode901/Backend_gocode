@@ -23,7 +23,7 @@ app.use("/api/v1/users",userRouter)
 // https://localhost:8000/api/v1/users/registerUser
 
 
-export default app ;
+export {app} ;
 
 
 // // test.js
@@ -39,3 +39,4 @@ export default app ;
 // });
 
 // export default app
+

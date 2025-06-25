@@ -6,7 +6,7 @@ const asyncHandler=( requestHandler)=>{
     }
 };
 
-export default asyncHandler
+export {asyncHandler} 
 
 
 //   by try and catch   wrapper for execution function
