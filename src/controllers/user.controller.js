@@ -7,7 +7,10 @@ import { ApiResponse } from "../utils/ApiResponse.js"
 
 const registerUser = asyncHandler(async (req, res)=>{
 
-          
+    // console.log(req);
+    // console.log(req.route);
+    
+    
     const {username, fullname, email, password}= req.body
     // console.log("email " , email);
 
@@ -29,7 +32,15 @@ const registerUser = asyncHandler(async (req, res)=>{
     }
 
     const avatarLocalPath= req.files?.avatar[0]?.path
-    const coverImageLocalPath= req.files?.coverImage[0]?.path;
+    // const coverImageLocalPath= req.files?.coverImage[0]?.path
+
+    // here for checking the value of coverImage
+    // to handle the error ( cannot read the properties of the undefined(reading "0"))
+    let coverImageLocalPath;
+
+    if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length>0){
+        coverImageLocalPath=req.files.coverImage[0].path
+    }
 
     if(!avatarLocalPath){
         throw new ApiError(400, "Avatar is required")

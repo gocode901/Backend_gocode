@@ -1,12 +1,12 @@
 // by promises wrapper for execution function
 
-const asyncHandler=( requestHandler)=>{
+const asyncHandler=(fn)=>{
    return (req, res, next)=>{
-        Promise.resolve( requestHandler(req,res,next)).catch((err)=>next(err))
+        Promise.resolve( fn(req,res,next)).catch((err)=>next(err))
     }
 };
 
-export {asyncHandler} 
+export {asyncHandler} // its a higher order function
 
 
 //   by try and catch   wrapper for execution function
