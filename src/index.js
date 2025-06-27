@@ -1,23 +1,22 @@
 // require('dotenv').config({ path: "./env"})
 import dotenv from "dotenv";
 import connectDB from "./db/db.js";
-import app from "./app.js"
+import app from "./app.js";
 
-dotenv.config({ path: "./.env"})
+dotenv.config({ path: "./.env" });
 // -r dotenv/config --experimental-json-modules
-// we need to add this in package.json/ nodemon 
-
+// we need to add this in package.json/ nodemon
 
 connectDB()
-.then(() => {
-  app.listen(process.env.PORT || 8000, () => 
-    console.log(`Server is running at port : ${process.env.PORT||8000}`)
-  )   
-})
-.catch((err) => {
-  console.log("MONGO db connection failed !!! ", err);
-  process.exit(1);
-})
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () =>
+      console.log(`Server is running at port : ${process.env.PORT || 8000}`)
+    );
+  })
+  .catch((err) => {
+    console.log("MONGO db connection failed !!! ", err);
+    process.exit(1);
+  });
 
 // ********
 // this is the "iife(immediately invoked function expression)" approach where we have the connection code itself in the index file and other approach will be writing the connection code separately in db file
@@ -41,4 +40,3 @@ const app = express();
   }
 })();
 */
-
